@@ -61,8 +61,8 @@ str(zk$srvr())
     ## List of 9
     ##  $ Zookeeper version  : chr "3.4.9-1757313, built on 08/23/2016 06:50 GMT"
     ##  $ Latency min/avg/max: chr "0/0/1006"
-    ##  $ Received           : chr "399317"
-    ##  $ Sent               : chr "402421"
+    ##  $ Received           : chr "399330"
+    ##  $ Sent               : chr "402434"
     ##  $ Connections        : chr "3"
     ##  $ Outstanding        : chr "0"
     ##  $ Zxid               : chr "0x2904"
@@ -94,9 +94,13 @@ zk$cons()
 ```
 
     ## $clients
-    ## [1] "/10.1.10.163:54152[1](queued=0,recved=71396,sent=73113,sid=0x1591fe694e80102,lop=PING,est=1482445512294,to=40000,lcxid=0x1b6e,lzxid=0x2904,lresp=1483305013460,llat=0,minlat=0,avglat=0,maxlat=1006)"
+    ## [1] "/10.1.10.163:54152[1](queued=0,recved=71404,sent=73121,sid=0x1591fe694e80102,lop=PING,est=1482445512294,to=40000,lcxid=0x1b6e,lzxid=0x2904,lresp=1483305120149,llat=0,minlat=0,avglat=0,maxlat=1006)"
     ## [2] "/10.1.10.129:50063[1](queued=0,recved=0,sent=0)"                                                                                                                                                     
-    ## [3] "/127.0.0.1:58815[0](queued=0,recved=1,sent=0)"
+    ## [3] "/127.0.0.1:59183[0](queued=0,recved=1,sent=0)"
+
+``` r
+zk$srst()
+```
 
 ### Test Results
 
@@ -107,7 +111,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Sun Jan  1 16:10:21 2017"
+    ## [1] "Sun Jan  1 16:12:05 2017"
 
 ``` r
 test_dir("tests/")
