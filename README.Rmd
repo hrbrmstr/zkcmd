@@ -1,0 +1,76 @@
+---
+output: rmarkdown::github_document
+---
+
+`zkcmd` : Tools to Administer 'Zookeeper' Instances with Four-letter Commands
+
+'Zookeeper' enables super-easy multi-node configuration management for distributed
+computing. The 'Zookeeper' instances themselves can be managed by issuing "four-letter
+words" over a TCP socket connection.. Methods are provided to interface with this
+administrative API.
+
+The following functions are implemented inside the `zmckd` reference class:
+
+- `available_commands()`: Show available four-letter commands
+- `conf()`: Print details about serving configuration.
+- `connect(host = "localhost", port = 2181L, timeout = 30L)`: Connect to a Zookeeper instance.
+- `cons()`: List full connection/session details for all clients connected to this server.
+- `crst()`: Reset connection/session statistics for all conn
+- `dirs()`: Shows the total size of snapshot and log files in bytes
+- `dump()`: Lists the outstanding sessions and ephemeral nodes. This only works on the leader.
+- `envi()`: Print details about serving environment.
+- `gtmk()`: Gets the current trace mask as a 64-bit signed long value in decimal format.
+- `initialize(..., host = "localhost", port = 2181L, timeout = 30L)`: Initialize a new Zookeeper commander object.
+- `isro()`: Tests if server is running in read-only mode.
+- `ruok()`: Tests if server is running in a non-error state. The server will respond with imok if it is running. Otherwise it will not respond at all.
+- `send_cmd(cmd)`: Issue a four-letter command. Used internally but can also be used to take advantage of new commands before a package update.
+- `srst()`: Reset server statistics.
+- `srvr()`: Lists full details for the server.
+- `stat()`: Lists brief details for the server and connected clients.
+- `wchc()`: Lists detailed information on watches for the server, by session.
+- `wchp()`: Lists detailed information on watches for the server, by path.
+- `wchs()`: Lists brief information on watches for the server.
+
+### Installation
+
+```{r eval=FALSE}
+devtools::install_git("https://gitlab.com/hrbrmstr/zkcmd.git")
+```
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+options(width=120)
+```
+
+### Usage
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(zkcmd)
+
+# current verison
+packageVersion("zkcmd")
+
+zk <- zkcmd$new()
+
+zk$ruok()
+
+str(zk$srvr())
+
+str(zk$conf())
+
+zk$isro()
+
+zk$cons()
+
+```
+
+### Test Results
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(zkcmd)
+library(testthat)
+
+date()
+
+test_dir("tests/")
+```
+

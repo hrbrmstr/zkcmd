@@ -1,0 +1,23 @@
+Package: zkcmd
+Type: Package
+Title: Tools to Administer 'Zookeeper' Instances with Four-letter Commands
+Version: 0.1.0
+Date: 2017-01-01
+Author: Bob Rudis (bob@@rud.is)
+Maintainer: Bob Rudis <bob@rud.is>
+Description: 'Zookeeper' enables super-easy multi-node configuration management for distributed
+    computing. The 'Zookeeper' instances themselves can be managed by issuing "four-letter words"
+    over a TCP socket connection.. Methods are provided to interface with this administrative API.
+URL: https://github.com/hrbrmstr/zkcmd
+BugReports: https://github.com/hrbrmstr/zkcmd/issues
+License: AGPL
+Suggests:
+    testthat
+Depends:
+    R (>= 3.2.0)
+Imports:
+    purrr,
+    stringi,
+    R.utils,
+    methods
+RoxygenNote: 5.0.1
